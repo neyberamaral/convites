@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+:root {
+    --fundo: #f5f0e9;
+    --papel: #fffdf9;
+    --texto: #4d463f;
+    --destaque: #8d7660;
+    --linha: #d8cbbb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+
+    background:
+        radial-gradient(circle at top, #fffaf4 0%, transparent 45%),
+        var(--fundo);
+
+    color: var(--texto);
+    font-family: "Montserrat", sans-serif;
+}
+
+.convite {
+    position: relative;
+    width: min(560px, 100%);
+    padding: 65px 45px;
+
+    text-align: center;
+
+    background: var(--papel);
+    border: 1px solid rgba(141, 118, 96, .25);
+    box-shadow: 0 25px 70px rgba(77, 70, 63, .12);
+}
+
+.convite::before,
+.convite::after {
+    content: "";
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    height: 1px;
+    background: var(--linha);
+}
+
+.convite::before {
+    top: 25px;
+}
+
+.convite::after {
+    bottom: 25px;
+}
+
+.ornamento {
+    color: var(--destaque);
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.pre-titulo {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #897d72;
+}
+
+h1 {
+    margin: 18px 0 15px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(52px, 12vw, 76px);
+    line-height: .9;
+    font-weight: 500;
+    color: var(--destaque);
+}
+
+h1 span {
+    font-size: .65em;
+    font-style: italic;
+}
+
+.mensagem {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    width: fit-content;
+    margin: 35px auto 8px;
+    padding: 14px 25px;
+
+    border-top: 1px solid var(--linha);
+    border-bottom: 1px solid var(--linha);
+}
+
+.data strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 52px;
+    line-height: .8;
+    font-weight: 500;
+    color: var(--destaque);
+}
+
+.data div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.data span {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.data small {
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.horario {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.local {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 28px;
+}
+
+.icone {
+    font-size: 22px;
+    color: var(--destaque);
+}
+
+.local strong {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.local small {
+    font-size: 11px;
+    color: #81766d;
+}
+
+.acoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.acoes a {
+    padding: 12px 18px;
+
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: white;
+    background: var(--destaque);
+
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+.acoes a:hover {
+    transform: translateY(-2px);
+    opacity: .88;
+}
+
+.rodape {
+    margin-top: 35px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    font-style: italic;
+    color: #776d65;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .convite {
+        padding: 55px 25px;
+    }
+
+    .convite::before,
+    .convite::after {
+        left: 15px;
+        right: 15px;
+    }
+
+    .mensagem {
+        font-size: 18px;
+    }
+
+    .acoes a {
+        width: 100%;
+    }
+}
