@@ -1,48 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ana & Gabriel | Nosso Casamento</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Convite de casamento de Ana & Lucas" />
+  <title>Ana & Lucas | Nosso Casamento</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <main class="convite">
-        <div class="ornamento">✦</div>
+  <!-- =========================================================
+       CAPA DO CONVITE
+       Clique em "Abrir convite" para iniciar a animação.
+  ========================================================== -->
+  <div class="invitation-cover" id="invitationCover" aria-label="Capa do convite">
+    <div class="cover-glow"></div>
+    <div class="cover-texture"></div>
 
-        <p class="pre-titulo">Com alegria em nossos corações</p>
+    <div class="cover-content">
+      <p class="cover-small">Com carinho, convidamos você</p>
 
-        <h1>Ana <span>&</span> Gabriel</h1>
+      <div class="cover-monogram">
+        <span>A</span>
+        <i>&</i>
+        <span>L</span>
+      </div>
 
-        <p class="mensagem">
-            Convidam você para celebrar com eles<br>
-            o início de uma nova história.
+      <p class="cover-names">Ana & Lucas</p>
+      <p class="cover-date">13 • 02 • 2027</p>
+
+      <button class="open-invitation" id="openInvitation" type="button">
+        <span>Desatar os laços</span>
+        <b>♡</b>
+      </button>
+    </div>
+
+    <!-- Laços / fitas -->
+    <div class="ribbon ribbon-left" aria-hidden="true">
+      <div class="ribbon-knot"></div>
+      <div class="ribbon-tail ribbon-tail-left"></div>
+      <div class="ribbon-tail ribbon-tail-right"></div>
+    </div>
+
+    <div class="ribbon ribbon-right" aria-hidden="true">
+      <div class="ribbon-knot"></div>
+      <div class="ribbon-tail ribbon-tail-left"></div>
+      <div class="ribbon-tail ribbon-tail-right"></div>
+    </div>
+
+    <div class="cover-hint">
+      <span>toque para abrir</span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       CONTEÚDO DO CONVITE
+  ========================================================== -->
+  <div class="invitation-content" id="invitationContent" aria-hidden="true">
+
+    <header class="hero">
+      <div class="hero-overlay"></div>
+
+      <!-- Coloque a foto dos noivos em img/noivos.jpg -->
+      <img
+        src="img/noivos.jpg"
+        alt="Foto dos noivos"
+        class="hero-photo"
+        id="heroPhoto"
+      />
+
+      <div class="photo-placeholder" id="photoPlaceholder">
+        <span>Adicione a foto dos noivos em<br><strong>img/noivos.jpg</strong></span>
+      </div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Com alegria, convidamos você para celebrar</p>
+        <h1>Ana <span>&</span> Lucas</h1>
+        <p class="date">13 • 02 • 2027</p>
+        <a href="#convite" class="scroll-btn" aria-label="Ver convite">↓</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro section reveal" id="convite">
+        <div class="ornament">✦</div>
+        <p class="small-title">Nosso grande dia</p>
+        <h2>Vamos nos casar!</h2>
+        <p class="intro-text">
+          Depois de tantos momentos, histórias e sonhos compartilhados,
+          chegou a hora de vivermos um dos capítulos mais especiais das nossas vidas.
+          E queremos você conosco para celebrar esse dia.
+        </p>
+      </section>
+
+      <section class="quote-section reveal">
+        <div class="quote-box">
+          <span class="quote-mark">“</span>
+          <blockquote>
+            O amor não consiste em olhar um para o outro,
+            mas em olhar juntos na mesma direção.
+          </blockquote>
+          <p>— Antoine de Saint-Exupéry</p>
+        </div>
+      </section>
+
+      <section class="details section reveal">
+        <p class="small-title">Reserve essa data</p>
+        <h2>13 de Fevereiro de 2027</h2>
+
+        <div class="details-grid">
+          <article class="detail-card">
+            <div class="detail-icon">♡</div>
+            <h3>Cerimônia</h3>
+            <p>16:30</p>
+            <span>Igreja Nossa Senhora das Graças</span>
+          </article>
+
+          <article class="detail-card">
+            <div class="detail-icon">⌂</div>
+            <h3>Recepção</h3>
+            <p>18:00</p>
+            <span>Espaço Jardim Imperial</span>
+          </article>
+
+          <article class="detail-card">
+            <div class="detail-icon">⌖</div>
+            <h3>Localização</h3>
+            <p>Iporá - GO</p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
+              Ver no mapa
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="countdown-section reveal">
+        <p class="small-title light">Contagem regressiva</p>
+        <h2>Falta pouco para o nosso “sim”</h2>
+
+        <div class="countdown" id="countdown">
+          <div><strong id="days">00</strong><span>Dias</span></div>
+          <div><strong id="hours">00</strong><span>Horas</span></div>
+          <div><strong id="minutes">00</strong><span>Minutos</span></div>
+          <div><strong id="seconds">00</strong><span>Segundos</span></div>
+        </div>
+      </section>
+
+      <section class="dress-code section reveal">
+        <div class="ornament">✦</div>
+        <p class="small-title">Dress code</p>
+        <h2>Esporte fino</h2>
+        <p>
+          Queremos que você se sinta lindo(a), confortável e pronto(a)
+          para celebrar conosco até o final da noite.
+        </p>
+      </section>
+
+      <section class="rsvp section reveal">
+        <p class="small-title">Confirmação de presença</p>
+        <h2>Você vem celebrar conosco?</h2>
+        <p class="rsvp-text">
+          Sua presença tornará esse momento ainda mais especial.
+          Confirme até 30 de janeiro de 2027.
         </p>
 
-        <div class="data">
-            <strong>18</strong>
-            <div>
-                <span>OUTUBRO</span>
-                <small>2026</small>
-            </div>
-        </div>
+        <form id="rsvpForm" class="rsvp-form">
+          <div class="field">
+            <label for="guestName">Seu nome</label>
+            <input type="text" id="guestName" placeholder="Digite seu nome" required />
+          </div>
 
-        <p class="horario">Às 17:00</p>
+          <div class="field">
+            <label for="guests">Número de pessoas</label>
+            <select id="guests">
+              <option value="1">1 pessoa</option>
+              <option value="2">2 pessoas</option>
+              <option value="3">3 pessoas</option>
+              <option value="4">4 pessoas</option>
+            </select>
+          </div>
 
-        <div class="local">
-            <span class="icone">⌖</span>
-            <strong>Espaço Jardim das Flores</strong>
-            <small>Goiânia - GO</small>
-        </div>
-
-        <div class="acoes">
-            <a href="#confirmar">Confirmar presença</a>
-            <a href="#local">Ver localização</a>
-        </div>
-
-        <p class="rodape">Esperamos você para viver este momento conosco.</p>
+          <button type="submit" class="primary-btn">
+            Confirmar pelo WhatsApp
+          </button>
+        </form>
+      </section>
     </main>
 
+    <footer>
+      <div class="footer-monogram">A <span>&</span> L</div>
+      <p>13 • 02 • 2027</p>
+      <small>Feito com amor para um dia inesquecível.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
